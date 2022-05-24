@@ -1,0 +1,8 @@
+numpy
+pandas
+tqdm
+scikit-learn
+python-dotenv
+Cython
+ml_collections
+git+https://github.com/GuillaumeStaermanML/FIF.git#egg=pyt-fif
