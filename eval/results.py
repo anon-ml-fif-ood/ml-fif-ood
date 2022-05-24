@@ -5,7 +5,6 @@ from dataclasses import dataclass, field
 import pandas as pd
 
 TENSORS_DIR = "tensors"
-RESULTS_DIR = "results"
 
 
 @dataclass
@@ -76,7 +75,6 @@ def get_matadata(config: Config):
 
 
 def get_features_name_deprecated(config: Config):
-    # DEPRECATED
     name = "all_features_nodes"
     name += (
         f"_{config.checkpoint_number}" if config.checkpoint_number is not None else ""
@@ -101,7 +99,6 @@ def get_penultimate_feature_name(config: Config):
 
 
 def get_train_features_path_deprecated(config: Config):
-    # DEPRECATED
     name = get_features_name_deprecated(config)
     name += "_train"
     return os.path.join(get_in_tensors_path(config), name + ".pt")
@@ -119,14 +116,8 @@ def get_train_penultimate_feature_path(config: Config):
 
 
 def get_in_features_path(config: Config):
-    # DEPRECATED
     name = get_features_name_deprecated(config)
     return os.path.join(get_in_tensors_path(config), name + ".pt")
-
-
-# def get_in_features_path(config: Config, feature_name: str):
-#     name = get_features_name(config)
-#     return os.path.join(get_in_tensors_path(config), feature_name, name + ".pt")
 
 
 def get_in_penultimate_feature_path(config: Config):
@@ -186,8 +177,6 @@ def get_out_logits_path(config: Config):
 
 def _get_scores_path(path, config: Config, name: str):
     os.makedirs(path, exist_ok=True)
-    # name += "_all" if config.all_features else "_block"
-    # name += "_logits" if config.logits_flag else ""
     name += "_{}".format(config.reduce) if config.reduce else ""
     name += (
         f"_{config.checkpoint_number}" if config.checkpoint_number is not None else ""
