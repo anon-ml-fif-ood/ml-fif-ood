@@ -8,7 +8,7 @@ from ._abc import AggregationABC
 
 class ClassCondFunctionalIsolationForest(AggregationABC):
     def __init__(
-        self, ntrees=100, sample_size=512, dic_number=1, alpha=1, seed=0
+        self, ntrees=200, sample_size=128, dic_number=1, alpha=1, seed=0
     ) -> None:
         self.ntrees = ntrees
         self.sample_size = sample_size
@@ -30,8 +30,8 @@ class ClassCondFunctionalIsolationForest(AggregationABC):
             self.forest[c] = FIF.FiForest(
                 X[pred == c, :].astype("double"),
                 time=tps,
-                ntrees=self.ntrees,  # ntrees=100, fit takes 220s and forward takes 10s
-                sample_size=self.sample_size,  # 512
+                ntrees=self.ntrees,
+                sample_size=self.sample_size,
                 limit=self.limit,
                 dic_number=self.dic_number,
                 alpha=self.alpha,
