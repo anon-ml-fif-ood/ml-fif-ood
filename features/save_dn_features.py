@@ -102,7 +102,8 @@ def main(args):
         torch.save(
             features["classifier"], os.path.join(destination_path, f"{filename}.pt")
         )
-    torch.save(targets, os.path.join(destination_path, "targets.pt"))
+    filename = "targets_train" if args.train else "targets"
+    torch.save(targets, os.path.join(destination_path, f"{filename}.pt"))
 
 
 if __name__ == "__main__":
