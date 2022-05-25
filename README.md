@@ -18,7 +18,7 @@ torch>=1.10
 torchvision>=0.11
 ```
 
-Then, install the remaining dependencies with `pip install -r requirements.txt`. 
+Then, install the remaining dependencies with `pip install -r requirements.txt`.
 
 Optional: using a virtual environment:
 
@@ -35,7 +35,7 @@ Set the environment variables from `.env.example` file in a `.env` file.
 
 ## Pre-trained models
 
-Download pre-trained models and place them in the `PRE_TRAINED_DIR` environmental variable (e.g., `PRE_TRAINED_DIR="${PWD/vision/pre_trained"`).
+Download pre-trained models and place them in the `PRE_TRAINED_DIR` environmental variable (e.g., `PRE_TRAINED_DIR="${PWD}/vision/pre_trained"`).
 
 ```bash
 # BiT-S-R101
@@ -69,7 +69,7 @@ wget -P $DATASETS_DIR http://pages.cs.wisc.edu/~huangrui/imagenet_ood_dataset/Pl
 
 ## Our Algorithm
 
-We implement our Class Conditional Functional Isolation Forest algorithm in the file `/ccfif.py`. The FIF package was automatically installed from `https://github.com/GuillaumeStaermanML/FIF`.
+We implement our Class Conditional Functional Isolation Forest algorithm in the file `aggregations/ccfif.py`. The FIF package was automatically installed from `https://github.com/GuillaumeStaermanML/FIF`.
 
 ## Evaluation: Reproducing our Results and Baselines
 
@@ -95,7 +95,7 @@ We report our main results in Table~\ref{tab:main} which includes the evaluation
 
 Table 1. Comparing our method against state-of-the-art on OOD detection. Our scores are averaged over 10 seeds. Values are in percentage.
 
-| **Models** | **Datasets** | **iNaturalist**| | **SUN** | |**Places** | | **Textures** | |
+| **Models** | **Methods** | **iNaturalist**| | **SUN** | |**Places** | | **Textures** | |
 |---|---|---|---|---|---|---|---|---|---|
 |  |  | TNR95 | AUROC | TNR95 | AUROC | TNR95 | AUROC | TNR95 | AUROC |
 | BiT-S-101 | MSP | 36.31 | 87.59 | 20.02 | 78.34 | 18.56 | 76.76 | 17.27 | 74.45 |

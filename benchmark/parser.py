@@ -106,7 +106,6 @@ class Arguments:
     features_names: list = field(default_factory=list)
     dont_save: bool = False
     batch_size: int = 50000
-    profiling: bool = False
     train_ds: bool = False
     model_path: str = None
 

@@ -180,7 +180,6 @@ if __name__ == "__main__":
         in_dataset=in_dataset_name,
         out_dataset=args.ood_dataset,
         method=args.score,
-        checkpoint_number=args.checkpoint_number,
     )
     print(config)
     main()
