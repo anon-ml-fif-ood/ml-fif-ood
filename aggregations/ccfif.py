@@ -8,7 +8,7 @@ from ._abc import AggregationABC
 
 class ClassCondFunctionalIsolationForest(AggregationABC):
     def __init__(
-        self, ntrees=200, sample_size=128, dic_number=1, alpha=1, seed=0
+        self, ntrees=200, sample_size=256, dic_number=1, alpha=1, seed=0
     ) -> None:
         self.ntrees = ntrees
         self.sample_size = sample_size
